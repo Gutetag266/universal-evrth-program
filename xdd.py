@@ -18,7 +18,7 @@ class UniversalInstallerGUI:
         ctk.set_appearance_mode("dark")
         ctk.set_default_color_theme("blue")
 
-        # Struktura danych: Kategorie -> Programy
+        # Struktura danych: Kategorie  Programy
         self.categories = {
             "Programy": [
                 {
@@ -58,7 +58,7 @@ class UniversalInstallerGUI:
         
         try:
             if cmd_type == "powershell":
-                # Używamy -NoProfile dla czystego środowiska i -ExecutionPolicy Bypass dla skryptów z sieci
+                # U
                 process_args = ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", cmd]
                 result = subprocess.run(process_args, capture_output=False)
             else:
@@ -79,7 +79,7 @@ class UniversalInstallerGUI:
     def show_main_menu(self):
         """Wyświetla listę 'folderów' (kategorii)."""
         self.clear_frame()
-        self.back_button.pack_forget() # Ukryj przycisk powrotu w menu głównym
+        self.back_button.pack_forget() # U
         self.header.configure(text="Menu Główne")
         
         for category in self.categories.keys():
@@ -97,7 +97,7 @@ class UniversalInstallerGUI:
         """Wyświetla programy wewnątrz wybranej kategorii."""
         self.clear_frame()
         self.header.configure(text=f"Kategoria: {category_name}")
-        self.back_button.pack(pady=5, side="top") # Pokaż przycisk powrotu
+        self.back_button.pack(pady=5, side="top") # P
 
         for tool in self.categories[category_name]:
             btn = ctk.CTkButton(
@@ -133,4 +133,5 @@ class UniversalInstallerGUI:
 
 if __name__ == "__main__":
     app = UniversalInstallerGUI()
+
     app.run()
